@@ -103,9 +103,11 @@ class SportsWalking(Training):
         mean_speed = self.get_mean_speed()
 
         return (
-            (self.COEFF_CALORIES_1 * self.weight
-            + (mean_speed ** 2 // self.height)
-            * self.COEFF_CALORIES_2 * self.weight)
+            (
+                self.COEFF_CALORIES_1 * self.weight
+                + (mean_speed ** 2 // self.height)
+                * self.COEFF_CALORIES_2 * self.weight
+            )
             * self.duration * self.HOURS_TO_MINUTES
         )
 
